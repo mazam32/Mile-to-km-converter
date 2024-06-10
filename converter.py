@@ -5,8 +5,12 @@ window.title("Mile to Km Converter")
 window.config(padx= 20, pady= 20)
 
 def convert():
-    result = int(mile_entry.get()) * 1.60934
-    num_of_km["text"] = int(result)
+    try:
+        miles = int(mile_entry.get())
+        result = miles * 1.60934
+        num_of_km["text"] = int(result)
+    except ValueError:
+        num_of_km["text"] = "Invalid input"
     
     
 mile_entry = Entry()
